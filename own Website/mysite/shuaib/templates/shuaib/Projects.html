@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'shuaib/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-content">
+    <main>
+        <section class="contain" id="blogs">
+            <div class="blogs-content">
+                <div class="main-title">
+                    <h2>My <span>Projects</span><span class="bg-text">My Work</span></h2>
+                </div>
+                <div class="blogs">
+                    <div class="blog">
+                        <img src="{% static 'shuaib/images/data.png' %}" alt="">
+                        <div class="blog-text">
+                            <h4>
+                                Covid-19 Data Analysis
+                            </h4>
+                            <p>
+                                Python | Seaborn | Pandas | Matplotlib
+                                <br>
+                                Analysed data to identify Trend.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src="{% static 'shuaib/images/dev.png' %}" alt="">
+                        <div class="blog-text">
+                            <h4>
+                                Portfolio Website
+                            </h4>
+                            <p>
+                                Python | HTML | CSS | JS
+                                <br>
+                                Built a portfolio website with Django Web Framework.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src="{% static 'shuaib/images/database.png' %}" alt="">
+                        <div class="blog-text">
+                            <h4>
+                                Property Management System
+                            </h4>
+                            <p>
+                                Python | MySql | Tkinter | SQL
+                                <br>
+                                Built a Property Management System for Investment Companies to Keep track of corporate
+                                assets.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src="{% static 'shuaib/images/web.png' %}" alt="">
+                        <div class="blog-text">
+                            <h4>
+                                WebScraper
+                            </h4>
+                            <p>
+                                Python | Bs4
+                                <br>
+                                Built a webscraper to scrape amazon and send product price change alert via email.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="controls">
+        <div class="control active-btn" data-id="home" >
+            <a href="{% url 'shuaib:home' %}"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="control" data-id="about">
+            <a href="{% url 'shuaib:about' %}"><i class="fas fa-user"></i></a>
+        </div>
+        <div class="control" data-id="blogs">
+            <a href="{% url 'shuaib:projects' %}"><i class="far fa-newspaper"></i></a>
+        </div>
+        <div class="control" data-id="contact">
+            <a href="{% url 'shuaib:contact' %}"><i class="fas fa-envelope-open"></i></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

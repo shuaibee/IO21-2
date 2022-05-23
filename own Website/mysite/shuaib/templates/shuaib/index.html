@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'shuaib/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="{% static 'shuaib/images/shuaib1.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span>Mohammed Shuaib Shaik.</span>
+                    A Computer Engineering Student
+                </h1>
+                <p>
+                    <h3>Let's Take a Vote:</h3>
+                    <br>
+                    {% if latest_question_list %}
+                        <ul>
+                        {% for question in latest_question_list %}
+                            <li>- <a href="{% url 'shuaib:detail' question.id %}">{{ question.question_text }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No polls are available.</p>
+                    {% endif %}
+                </p>
+
+            </div>
+        </div>
+    </header>
+    <main>
+
+
+    </main>
+
+    <div class="controls">
+        <div class="control active-btn" data-id="home" >
+            <a href="{% url 'shuaib:home' %}"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="control" data-id="about">
+            <a href="{% url 'shuaib:about' %}"><i class="fas fa-user"></i></a>
+        </div>
+        <div class="control" data-id="blogs">
+            <a href="{% url 'shuaib:projects' %}"><i class="far fa-newspaper"></i></a>
+        </div>
+        <div class="control" data-id="contact">
+            <a href="{% url 'shuaib:contact' %}"><i class="fas fa-envelope-open"></i></a>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
